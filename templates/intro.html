@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+
+    <h1><b>Welcome to Word Game 4</b></h1><br>
+    <br>
+    <b>How to Play:</b><br>
+    <br>
+    <p>You are provided with a sourceword</p><br>
+    <p>Using the Sourceword come up with seven 4-or-more letter words made u with letters from the sourcword</p>
+    <b>Rules</b><br>
+    <ol>
+        <li>Only use letters from the sourceword</li>
+        <li>Don't reuse letters more times than they appear in the sourceword</li>
+        <li>Each word exists in the dictionary</li>
+        <li>Words have 4 or more letters</li>
+        <li>No duplicate words</li>
+        <li>None of the words are the source word itself</li>
+    </ol> <br>
+
+    <a href="startgame.html"><button>Start Game</button></a> <br>
+
+    <p>Check out the leaderboard <a href="top10.html">here</a></p>
+    
+{% endblock %}
