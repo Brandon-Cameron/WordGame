@@ -114,9 +114,9 @@ def processWords():
             title = "Word Game 4",
             Errors = errorList,
         )
-
-@app.route("/top10", methods = ['POST'])
-def top10():
+    
+@app.route("/leaderboard", methods = ['POST'])
+def leaderboard():
     user = request.form["name"]
     source_word = session["source_word"]
     input = session["input"]
@@ -136,12 +136,30 @@ def top10():
             leaderboard = results
         )
 
+@app.route("/top10")
+def top10():
+    results = setupBoard()
+
+    return render_template(
+            "top10.html",
+            title = "Word Game 4",
+            leaderboard = results
+        )
+
 def checkAnsLen(ans):
+     if (len(ans) < 7):
+         print("Less than 7 words entered")
+         global gameOver
+         gameOver = True
+         print(gameOver)
+         print("Game Over")
+         return  "Less than 7 words entered"
+
      for word in ans:
          if len(word) < 4:
              print(word + " is too short")
-             global gameOver
              gameOver = True
+             print(gameOver)
              print("Game Over")
              return  word + " too short"
          else:
@@ -157,9 +175,11 @@ def checkAnsValid(ans):
                 with open("words_alpha.txt") as wordsfile:
                     for x in wordsfile:
                         if x.strip() == word:
+                            print(word)
                             print("Good")
                             validWord = True
                             break
+                print(validWord)
             else:
                 print(word + ": Invalid Word")
                 global gameOver
