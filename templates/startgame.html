@@ -2,12 +2,14 @@
 
 {% block the_body %}
 
-    <h1><b>Your Time Starts.... Now!</b></h1><br>
-    <p>Your word is : {{ sourceWord }}</p><br>
-    <p>Enter your seven words below, seperating each with a space</p>
+    <h1 id="center"><b>Your Time Starts.... Now!</b></h1><br>
+    <p id="center">Your word is :</p> <p id="sourceword">{{ sourceWord }}</p><br>
+    <p id="center">Enter your seven words below, seperating each with a space</p>
 
-    <input type="text" size="50" name="words"> <br>
+    <form id="center"action="processwords" method="POST">
+        <input type="text" size="50" name="words"> <br>
 
-    <a href=""><button>Finshed?</button></a>
+        <a href="processwords"><input type="submit" value="Finshed?"></a>
+    </form>
 
 {% endblock %}

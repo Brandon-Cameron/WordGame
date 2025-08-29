@@ -2,6 +2,19 @@
 
 {% block the_body %}
 
-    <h1></h1>
+    <h1 id="center">Game Over</h1>
+
+    <ul>
+        {% for error in Errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+     
+    <p id="center">Better luck next time</p>
+
+    <div id="center">
+        <a href="startgame" id="center"><input type="submit" value="Play Again?" id="center"></a> <br><br>
+        <a href="intro" id="center"><input type="submit" value="Read the Rules" id="center"></a>
+    </div>
 
 {% endblock %}

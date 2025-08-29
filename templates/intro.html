@@ -2,13 +2,14 @@
 
 {% block the_body %}
 
-    <h1><b>Welcome to Word Game 4</b></h1><br>
-    <br>
-    <b>How to Play:</b><br>
-    <br>
-    <p>You are provided with a sourceword</p><br>
-    <p>Using the Sourceword come up with seven 4-or-more letter words made u with letters from the sourcword</p>
-    <b>Rules</b><br>
+    <h1 id="center"><b>Welcome to Word Game 4</b></h1><br>
+
+    <p id="center"><b>How to Play:</b></p>
+
+    <p id="center">You are provided with a sourceword</p>
+    <p id="center">Using the Sourceword come up with seven 4-or-more letter words made u with letters from the sourcword</p>
+    <p id="center"><b>Rules</b></p>
+
     <ol>
         <li>Only use letters from the sourceword</li>
         <li>Don't reuse letters more times than they appear in the sourceword</li>
@@ -18,8 +19,10 @@
         <li>None of the words are the source word itself</li>
     </ol> <br>
 
-    <a href="startgame.html"><button>Start Game</button></a> <br>
+    <div id="center">
+        <a href="startgame" id="center"><button id="center">Start Game</button></a> <br>
+    </div>
 
-    <p>Check out the leaderboard <a href="top10.html">here</a></p>
+    <p id="center">Check out the leaderboard <a href="top10.html">here</a></p>
     
 {% endblock %}

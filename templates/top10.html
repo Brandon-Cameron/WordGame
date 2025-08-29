@@ -2,6 +2,33 @@
 
 {% block the_body %}
 
-    <h1></h1>
+    <div id="center">
+        <table>
+            <tr>
+                <th>Position</th>
+                <th>Time</td>
+                <th>User</td>
+                <th>Sourceword</td>
+                <th>Matches</td>
+            </tr>
+        {% for r in leaderboard %}
+            <tr>
+                <td>{{ leaderboard.index(r) + 1 }}</td>
+                <td>{{ r[0] }}</td>
+                <td>{{ r[1] }}</td>
+                <td>{{ r[2] }}</td>
+                <td>{{ r[3] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    <br>
+
+    <div id="center">
+        <a href="startgame" id="center"><input type="submit" value="Play Again?" id="center"></a> <br><br>
+        <a href="intro" id="center"><input type="submit" value="Read the Rules" id="center"></a>
+    </div>
+
 
 {% endblock %}
