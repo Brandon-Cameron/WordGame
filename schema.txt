@@ -1,0 +1,25 @@
+host: 	  localhost
+user: 	  wordgameuser
+password: wordgamepasswd
+database: wordgamedb
+
+LAYOUT:
+wordgamedb
+	-tables
+		-leaderboard
+			-Time 	    | varchar(32)
+			-User 	    | varchar(32)
+			-Sourceword | varchar(32)
+			-Matches    | varchar(256)
+
+TABLE CREATION
+create table leaderboards(
+    Time varchar(32),
+    User varchar(32) not null,
+    Sourceword varchar(32) not null,
+    Matches varchar(256) not null
+);
+
+USES
+"insert into leaderboard (Time, User, Sourceword, Matches) values (timeStr, user, source_word, input)"
+"select * from leaderboard ORDER BY ABS(Time) limit 10"
